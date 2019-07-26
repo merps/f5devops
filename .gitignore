@@ -1,0 +1,13 @@
+*.tfstate
+*.backup
+.terraform/
+.terraform/*
+*/.terraform/
+*/.terraform/*
+.vs/
+.vs/*
+.vscode/
+.vscode/*
+*.DS_Store
+*.idea/
+*.idea/*
