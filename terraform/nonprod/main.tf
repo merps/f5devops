@@ -8,7 +8,7 @@ provider "aws" {
   region  = "${var.aws-region}"
 
   assume_role {
-    role_arn = "arn:aws:iam::495525536654:role/DdevopsCrossAccountAdministrators"
+    role_arn = "arn:aws:iam::<MasterAccountID>:role/<CrossAccountRole>"
   }
 }
 
@@ -18,7 +18,7 @@ provider "aws" {
   region  = "${var.aws-region}"
 
   assume_role {
-    role_arn = "arn:aws:iam::729494319877:role/DdevopsCrossAccountAdministrators"
+    role_arn = "arn:aws:iam::<MasterAccountID>:role/<CrossAccountRole>"
   }
 }
 
