@@ -1,24 +1,3 @@
-/* # Terraform remote state store bucket name
-backend_s3 = "terraform-data-rr-idas-prod"
-
-# Account IDs
-aws_account_shared = "556201001071" # Volley Shared / Central
-
-aws_account_nonprod = "502889103111" # Volley Nonprod
-
-aws_account_prod = "564117060686" # Volley Prod
-
-aws_account_logging = "351725868221" # Strut WORM
-
-customer_name = "rr-idas"
-
-# Project-specific tags
-name = "rr-idas"
-
-project_name = "RR-IDAS"
-
-unique_owner = "rr-idas"
-*/
 variable "parent-profile" {
   description = "AWS Parent Profile to configure for."
 }
