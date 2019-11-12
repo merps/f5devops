@@ -1,21 +1,21 @@
-aws-region = "ap-southeast-2"
+aws-region = "<aws-region>"
 
-project = "rr-idas"
+project = "<Client Project>"
 
-environment = "prod"
+environment = "<Environment>"
 
-admin-role = "DdevopsCrossAccountAdministrators"
+admin-role = "<IAMAdmin>"
 
-customer = "rr-idas"
+customer = "<Client>"
 
-parent-profile = "idas-central"
+parent-profile = "<AWS Master>"
 
-parent-account-id = "448458893730"
+parent-account-id = "<AWS Master AccountID>"
 
-child-profile = "idas-prod"
+child-profile = "<AWS Child/Sub>"
 
-child-account-id = "784602050105"
+child-account-id = "<AWS Child/Sub AccountID>"
 
-logging-profile = "idas-logging"
+logging-profile = "<AWS CIS Logging Account>"
 
-logging-account-id = "729494319877"
+logging-account-id = "<AWS CIS Logging AccountID>"
