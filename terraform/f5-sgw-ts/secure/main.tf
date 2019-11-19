@@ -15,9 +15,6 @@ module "vpc" {
   azs            = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
   public_subnets = ["10.4.0.0/27", "10.4.0.32/27", "10.4.0.64/27"]
 
-  enable_nat_gateway = false
-  enable_vpn_gateway = false
-
   tags = {
     Terraform   = "true"
     Environment = "${var.environment}"

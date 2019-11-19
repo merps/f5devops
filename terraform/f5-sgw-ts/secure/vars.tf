@@ -1,13 +1,13 @@
-variable "parent-profile" {
-  description = "AWS Parent Profile to configure for."
+variable "cidr" {
+  description = "VPC CIDR for Inspection gateway."
 }
 
 variable "parent-account-id" {
   description = "AWS Parent Number to configure for."
 }
 
-variable "child-profile" {
-  description = "Account name to configure Cloudtrail for."
+variable "secops-profile" {
+  description = "Account name to configure Environment for."
 }
 
 variable "child-account-id" {
@@ -70,12 +70,4 @@ variable "target_group_port" {
 variable "nlb_svc_path" {
   description = "Listener path?"
   default     = "/"
-}
-
-variable "static_eips" {
-  default = {
-    "0" = "eipalloc-0ef2fcf22cf8088ba"
-    "1" = "eipalloc-0ba8e5292d169d29a"
-    "2" = "eipalloc-08a3fcd57b5339ce3"
-  }
 }
