@@ -59,6 +59,8 @@ save the file and quit vi
 ```hcl
 # initialize Terraform
 terraform init
+# Plan terraform to validate deployment
+terraform plan
 # build the BIG-IPS and the underpinning infrastructure
 terraform apply 
 ```
@@ -103,5 +105,3 @@ as a final step check that terraform doesn't think there's anything remaining
 terraform show
 ```
 this should return a blank line
-
-https://github.com/mjmenger/terraform-aws-bigip-setup
