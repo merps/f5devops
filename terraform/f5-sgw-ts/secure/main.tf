@@ -2,39 +2,15 @@ terraform {
   backend "s3" {}
 }
 
-provider "aws" {
-  alias   = "child"
-  profile = "${var.child-profile}"
-  region  = "${var.aws-region}"
-
-  /*
-  assume_role {
-    role_arn = "arn:aws:iam::${var.child-account-id}:role/${var.admin-role}"
-  }
-*/
-}
-
-provider "aws" {
-  alias   = "logging"
-  profile = "${var.logging-profile}"
-  region  = "${var.aws-region}"
-
-  /*
-  assume_role {
-    role_arn = "arn:aws:iam::${var.logging-account-id}:role/${var.admin-role}"
-  }
-*/
-}
-
 module "vpc" {
-  source = "../global/modules/vpc"
+  source = "../global/services/vpc"
 
   providers = {
-    aws = "aws.child"
+    aws = "aws.secops"
   }
 
   name = "${var.project}-${var.environment}"
-  cidr = "10.4.0.0/22"
+  cidr = "var.cidr"
 
   azs            = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
   public_subnets = ["10.4.0.0/27", "10.4.0.32/27", "10.4.0.64/27"]
@@ -49,43 +25,6 @@ module "vpc" {
 }
 
 /*
-module "worm" {
-  source = "../global/modules/worm"
-
-  providers = {
-    aws = "aws.logging"
-  }
-
-  child-account-bucket = "${var.project}-${var.environment}"
-  child-project        = "${var.project}"
-  child-account-id     = "${var.child-account-id}"
-  child-account-env    = "${var.environment}"
-  child-account-region = "${var.aws-region}"
-} */
-
-/* module "compliance" {
-  source = "../global/modules/compliance"
-
-  providers = {
-    aws = "aws.child"
-    aws = "aws.logging"
-  }
-
-  vpc                  = "${module.vpc.vpc_id}"
-  parent-account-id    = "${var.parent-account-id}"
-  child-project        = "${var.project}"
-  parent-profile       = "${var.parent-profile}"
-  child-account-bucket = "${var.project}-${var.environment}"
-  child-profile        = "${var.child-profile}"
-  child-account-name   = "${var.project}-${var.environment}"
-  child-account-id     = "${var.child-account-id}"
-  child-account-env    = "${var.environment}"
-  child-account-region = "${var.aws-region}"
-  logging-account-id   = "${var.logging-account-id}"
-}
-
-*/
-
 ############################################################
 ## DMZ stanza
 ############################################################
@@ -370,3 +309,4 @@ resource "aws_autoscaling_attachment" "svc_asg_nlb-dmz" {
   autoscaling_group_name = "${aws_autoscaling_group.asg_dmz_f5.id}"
   alb_target_group_arn   = "${aws_lb_target_group.nlb_target_group.arn}"
 }
+*/
