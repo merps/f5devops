@@ -19,16 +19,6 @@ output "database_subnets" {
   value       = ["${module.vpc.database_subnets}"]
 }
 
-output "elasticache_subnets" {
-  description = "List of IDs of elasticache subnets"
-  value       = ["${module.vpc.elasticache_subnets}"]
-}
-
-output "redshift_subnets" {
-  description = "List of IDs of redshift subnets"
-  value       = ["${module.vpc.redshift_subnets}"]
-}
-
 output "intra_subnets" {
   description = "List of IDs of intra subnets"
   value       = ["${module.vpc.intra_subnets}"]
@@ -39,10 +29,4 @@ output "nat_public_ips" {
   description = "List of public Elastic IPs created for AWS NAT Gateway"
   value       = ["${module.vpc.nat_public_ips}"]
 }
-
-/*
-output "bucket_name_for_cloudtrail" {
-  value = "${module.worm.bucket_name_for_cloudtrail}"
-}
-*/
 

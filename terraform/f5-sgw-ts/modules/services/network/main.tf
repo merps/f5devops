@@ -5,7 +5,7 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name                 = format("%s-vpc-%s", var.prefix, random_id.id.hex)
+  name                 = format("%s-vpc-%s", var.prefix, var.random.hex)
   cidr                 = var.cidr
   enable_dns_hostnames = true
   enable_dns_support   = true
@@ -14,9 +14,9 @@ module "vpc" {
 
   # vpc public subnet used for external interface
   public_subnets = [for num in range(length(var.azs)) :
-      cidrsubnet(var.cidr, 8, num + var.external_subnet_offset)
+    cidrsubnet(var.cidr, 8, num + var.external_subnet_offset)
   ]
-  
+
   # vpc private subnet used for internal 
   private_subnets = [
     for num in range(length(var.azs)) :
@@ -35,9 +35,9 @@ module "vpc" {
   create_database_internet_gateway_route = true
 
   tags = {
-    Name        = format("%s-vpc-%s", var.prefix, random_id.id.hex)
+    Name        = format("%s-vpc-%s", var.prefix, var.random.hex)
     Terraform   = "true"
-    Environment = var.Environment
+    Environment = var.env
   }
 }
 

@@ -18,7 +18,7 @@ module "dockerhost" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "~> 2.0"
 
-  name           = format("%s-demo-dockerhost-%s", var.prefix, random_id.id.hex)
+  name           = format("%s-demo-dockerhost-%s", var.prefix, var.random.hex)
   instance_count = length(var.azs)
 
   ami                         = data.aws_ami.latest-ubuntu-docker.id
@@ -30,10 +30,10 @@ module "dockerhost" {
         volume_size = 100
       },
     ]
-  key_name                    = var.ec2_key_name
+  key_name                    = var.keyname
   monitoring                  = false
   vpc_security_group_ids      = [module.dockerhost_sg.this_security_group_id]
-  subnet_ids                  = module.vpc.private_subnets
+  subnet_ids                  = var.private_subnets
 
 
   user_data = templatefile("${path.module}/userdata.tmpl", {})
@@ -51,9 +51,9 @@ module "dockerhost" {
 module "dockerhost_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
-  name        = format("%s-dockerhost-%s", var.prefix, random_id.id.hex)
+  name        = format("%s-dockerhost-%s", var.prefix, var.random.hex)
   description = "Security group for BIG-IP Demo"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = var.vpcid
 
   ingress_cidr_blocks = [var.cidr]
   ingress_rules       = ["ssh-tcp"]
