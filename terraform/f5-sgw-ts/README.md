@@ -104,4 +104,9 @@ terraform show
 ```
 this should return a blank line
 
-https://github.com/mjmenger/terraform-aws-bigip-setup
+# Todo
+* adjust subnets and ranges to remove hardcoding for dynamic generation (smaller cidr for inspections)
+* template var passes between deployment and modules
+* AWS SSM integration for keystore/passwords
+* flow log addition/creation for CIS Foundations
+* AWS Security HUB(?)

@@ -107,7 +107,7 @@ resource "null_resource" "transfer" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
-      private_key = file(var.keyname)
+      private_key = file(var.keyfile)
       host        = module.jumphost.public_ip[count.index]
     }
   }
@@ -121,7 +121,7 @@ data "aws_network_interface" "bar" {
 resource "aws_eip" "juiceshop" {
   count                     = length(var.azs)
   vpc                       = true
-  network_interface         = "${data.aws_network_interface.bar[count.index].id}"
+  network_interface         = data.aws_network_interface.bar[count.index].id
   associate_with_private_ip = element(flatten(data.aws_network_interface.bar[count.index].private_ips), 1)
   tags = {
     Name = format("%s-juiceshop-eip-%s%s", var.prefix, var.random.hex, count.index)
@@ -131,7 +131,7 @@ resource "aws_eip" "juiceshop" {
 resource "aws_eip" "grafana" {
   count                     = length(var.azs)
   vpc                       = true
-  network_interface         = "${data.aws_network_interface.bar[count.index].id}"
+  network_interface         = data.aws_network_interface.bar[count.index].id
   associate_with_private_ip = element(flatten(data.aws_network_interface.bar[count.index].private_ips), 2)
   tags = {
     Name = format("%s-grafana-eip-%s%s", var.prefix, var.random.hex, count.index)

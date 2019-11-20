@@ -34,6 +34,10 @@ variable "keyname" {
 
 }
 
+variable "keyfile" {
+
+}
+
 variable "vpcid" {
 
 }
