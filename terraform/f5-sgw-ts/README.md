@@ -59,6 +59,8 @@ save the file and quit vi
 ```hcl
 # initialize Terraform
 terraform init
+# Plan terraform to validate deployment
+terraform plan
 # build the BIG-IPS and the underpinning infrastructure
 terraform apply 
 ```
@@ -103,6 +105,7 @@ as a final step check that terraform doesn't think there's anything remaining
 terraform show
 ```
 this should return a blank line
+<<<<<<< HEAD
 
 # Todo
 * adjust subnets and ranges to remove hardcoding for dynamic generation (smaller cidr for inspections)
@@ -110,3 +113,5 @@ this should return a blank line
 * AWS SSM integration for keystore/passwords
 * flow log addition/creation for CIS Foundations
 * AWS Security HUB(?)
+=======
+>>>>>>> c1011a4108b87900d2187485c80916d354a7fe8e
