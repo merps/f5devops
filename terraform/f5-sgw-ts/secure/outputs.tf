@@ -1,32 +1,51 @@
-output "vpc_id" {
-  description = "The ID of the VPC"
-  value       = "${module.vpc.vpc_id}"
+# Network Information
+output "vpc" {
+  description = "AWS VPC ID for the created VPC"
+  value       = module.vpc.vpc_id
 }
 
-# Subnets
-output "private_subnets" {
-  description = "List of IDs of private subnets"
-  value       = ["${module.vpc.private_subnets}"]
+# BIG-IP Information
+output "public_nic_ids" {
+  value = module.bigip.public_nic_ids
 }
 
-output "public_subnets" {
-  description = "List of IDs of public subnets"
-  value       = ["${module.vpc.public_subnets}"]
+output "mgmt_addresses" {
+  value = module.bigip.mgmt_addresses
+}
+output "bigip_mgmt_port" {
+  value = module.bigip.bigip_mgmt_port
 }
 
-output "database_subnets" {
-  description = "List of IDs of database subnets"
-  value       = ["${module.vpc.database_subnets}"]
+output "mgmt_public_dns" {
+  value = module.bigip.mgmt_public_dns
 }
 
-output "intra_subnets" {
-  description = "List of IDs of intra subnets"
-  value       = ["${module.vpc.intra_subnets}"]
+output "private_addresses" {
+  value = module.bigip.private_addresses
 }
 
-# NAT gateways
-output "nat_public_ips" {
-  description = "List of public Elastic IPs created for AWS NAT Gateway"
-  value       = ["${module.vpc.nat_public_ips}"]
+output "bigip_password" {
+  description = "BIG-IP management password"
+  value       = module.bigip.bigip_password
+}
+
+# Jumpbox information
+output "jumphost_ip" {
+  description = "ip address of jump host"
+  value       = module.jumpbox.jumphost_ip
+}
+
+output "juiceshop_ip" {
+  value = module.jumpbox.juiceshop_ips[*].public_ip
+}
+
+output "grafana_ip" {
+  value = module.jumpbox.grafana_ips[*].public_ip
+}
+
+# Instance Information
+output "ec2_key_name" {
+  description = "the key used to communication with ec2 instances"
+  value       = var.ec2_key_name
 }
 

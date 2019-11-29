@@ -19,7 +19,6 @@ resource "aws_secretsmanager_secret_version" "bigip-pwd" {
   secret_string = random_password.password.result
 }
 
-
 #
 # Create the BIG-IP appliances
 #
