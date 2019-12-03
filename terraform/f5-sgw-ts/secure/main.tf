@@ -93,5 +93,6 @@ module "jumpbox" {
   keyfile           = var.ec2_key_file
   bigip_mgmt_addr   = module.bigip.mgmt_addresses
   bigip_mgmt_dns    = module.bigip.mgmt_public_dns
+  bigip_password    = module.bigip.bigip_password
   bigip_private_add = module.bigip.private_addresses
 }

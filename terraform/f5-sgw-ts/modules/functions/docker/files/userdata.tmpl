@@ -1,4 +1,12 @@
 #!/bin/bash
+
+# Script must be non-blocking or run in the background for use in user_data.
+
+mkdir -p /config/cloud
+
+cat << 'EOF' > /config/cloud/startup-script.sh
+#!/bin/bash
+
 # prevent prompting for restart when installing core packages such as libssl
 DEBIAN_FRONTEND=noninteractive
 echo '* libraries/restart-without-asking boolean true' | sudo debconf-set-selections
@@ -8,4 +16,11 @@ sudo apt update
 sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install software-properties-common ansible python-apt python-pip -y
 sudo pip install -q jmespath
-ansible-galaxy install -r ansible/requirements.yml
+
+### Clean up
+rm /config/cloud/startup-script.sh 
+EOF
+
+# Now run in the background to not block startup
+chmod 755 /config/cloud/startup-script.sh 
+nohup /config/cloud/startup-script.sh &
