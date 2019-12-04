@@ -1,4 +1,3 @@
-
 #
 # Create random password for BIG-IP
 #
@@ -7,7 +6,6 @@ resource "random_password" "password" {
   special          = true
   override_special = "_%@"
 }
-
 #
 # Create Secret Store and Store BIG-IP Password
 #
@@ -18,7 +16,6 @@ resource "aws_secretsmanager_secret_version" "bigip-pwd" {
   secret_id     = aws_secretsmanager_secret.bigip.id
   secret_string = random_password.password.result
 }
-
 #
 # Create the BIG-IP appliances
 #
@@ -55,13 +52,10 @@ module "bigip" {
     module.bigip_mgmt_sg.this_security_group_id
   ]
 
-
   vpc_public_subnet_ids  = var.public_subnets
   vpc_private_subnet_ids = var.private_subnets
   vpc_mgmt_subnet_ids    = var.database_subnets
 }
-
-
 #
 # Create a security group for BIG-IP
 #
@@ -86,7 +80,6 @@ module "bigip_sg" {
   egress_cidr_blocks = ["0.0.0.0/0"]
   egress_rules       = ["all-all"]
 }
-
 #
 # Create a security group for BIG-IP Management
 #

@@ -36,7 +36,7 @@ module "dockerhost" {
   subnet_ids                  = var.private_subnets
 
 
-  user_data = templatefile("${path.module}/userdata.tmpl", {})
+  user_data = templatefile("${path.module}/files/userdata.tmpl", {})
 
   tags = {
     Terraform   = "true"

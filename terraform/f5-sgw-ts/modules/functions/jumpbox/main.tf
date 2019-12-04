@@ -31,6 +31,9 @@ module "jumphost" {
   vpc_security_group_ids      = [module.jumphost_sg.this_security_group_id]
   subnet_ids                  = var.public_subnets
 
+  # build user_data file from template
+  user_data = templatefile("${path.module}/files/userdata.tmpl",{})
+
   # this box needs to know the ip address of the bigip and the juicebox host
   # it also needs to know the bigip username and password to use
 
@@ -81,13 +84,13 @@ resource "null_resource" "transfer" {
   count = length(var.azs)
   provisioner "file" {
     content = templatefile(
-      "${path.module}/hostvars_template.yml",
+      "${path.module}/files/hostvars_template.yml",
       {
-        bigip_host_ip          = join(",", element(var.bigip_mgmt_addr, count.index)) #bigip_host_ip          = module.bigip.mgmt_public_ips[count.index]  the ip address that the bigip has on the management subnet
+        bigip_host_ip          = join(",", element(var.bigip_mgmt_addr,count.index)) #bigip_host_ip          = module.bigip.mgmt_public_ips[count.index]  the ip address that the bigip has on the management subnet
         bigip_host_dns         = var.bigip_mgmt_dns[count.index]                    # the DNS name of the bigip on the public subnet
         bigip_domain           = "${var.region}.compute.internal"
         bigip_username         = "admin"
-        bigip_password         = "abcd1234" ### TODO: read from SSM and can this go else where?
+        bigip_password         = var.bigip_password
         ec2_key_name           = var.keyname
         ec2_username           = "ubuntu"
         log_pool               = cidrhost(cidrsubnet(var.cidr, 8, count.index + var.internal_subnet_offset), 250)
