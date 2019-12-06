@@ -14,11 +14,6 @@ You can choose to run this from your workstation or a container. Follow the inst
 - install locust https://docs.locust.io/en/stable/installation.html
 - install jq https://stedolan.github.io/jq/download/
 
-# Using a Docker container
-The port 8089 is opened in order to use the gui of the locust load generating tool should you choose to use it.
-- install Docker Desktop (https://www.docker.com/products/docker-desktop)
-- `docker run -it -v $(pwd):/workspace -p 8089:8089 mmenger/tfdemoenv:1.6.2 /bin/bash`
-
 # Required Resource
 This example creates the following resources inside of AWS.  Please ensure your IAM user or IAM Role has privileges to create these objects.
 
@@ -46,12 +41,12 @@ After subscribing, re-run the ```terraform apply``` and the error should not occ
 #starting from within the clone of this repository
 vi secrets.auto.tfvars
 ```
-enter the following in the *secrets.auto.tfvars* file
+enter the following in the *secrets.tfvars* file
 ```hcl
 AccessKeyID         = "<AN ACCESS KEY FOR YOUR AWS ACCOUNT>" 
 SecretAccessKey     = "<THE SECRET KEY ASSOCIATED WITH THE AWS ACCESS KEY>" 
 ec2_key_name        = "<THE NAME OF AN AWS KEY PAIR WHICH IS ASSOCIATE WITH THE AWS ACOUNT>"
-ec2_key_file        = "<THE PATH TO AN SSH KEY FILE USED TO CONNECT TO THE UBUNTU SERVER ONCE IT IS CREATED. NOTE: THIS PATH SHOULD BE RELATIVE TO THE CONTAINER ROOT>"
+ec2_key_file        = "<THE ABSOLUTE PATH TO AN SSH PRIVATE KEY FILE USED TO CONNECT TO THE UBUNTU SERVER ONCE IT IS CREATED>"
 ```
 save the file and quit vi
 
@@ -60,9 +55,9 @@ save the file and quit vi
 # initialize Terraform
 terraform init
 # Plan terraform to validate deployment
-terraform plan
+terraform plan --var-file="<ABSOLUTE PATH OF THE *secrets.tfvars*>"
 # build the BIG-IPS and the underpinning infrastructure
-terraform apply 
+terraform apply --var-file="<ABSOLUTE PATH OF THE *secrets.tfvars*>"
 ```
 Depending upon how you intend to use the environment you may need to wait after Terraform is complete. The configuration of the  BIG-IPs is completed asynchoronously. If you need the BIG-IPs to be fully configured before proceeding, the following Inspec tests validate the connectivity of the BIG-IP and the availability of the management API end point.
 
