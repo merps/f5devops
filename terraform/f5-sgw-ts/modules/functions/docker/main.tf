@@ -3,7 +3,7 @@ data "aws_ami" "latest-ubuntu-docker" {
   owners      = ["099720109477"] # Canonical
 
   filter {
-    name = "name"
+    name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
 
@@ -25,15 +25,15 @@ module "dockerhost" {
   associate_public_ip_address = false
   instance_type               = "t2.xlarge"
   root_block_device = [
-      {
-        volume_type = "gp2"
-        volume_size = 100
-      },
-    ]
-  key_name                    = var.keyname
-  monitoring                  = false
-  vpc_security_group_ids      = [module.dockerhost_sg.this_security_group_id]
-  subnet_ids                  = var.private_subnets
+    {
+      volume_type = "gp2"
+      volume_size = 100
+    },
+  ]
+  key_name               = var.keyname
+  monitoring             = false
+  vpc_security_group_ids = [module.dockerhost_sg.this_security_group_id]
+  subnet_ids             = var.private_subnets
 
 
   user_data = templatefile("${path.module}/files/userdata.tmpl", {})

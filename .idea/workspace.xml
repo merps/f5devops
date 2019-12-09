@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8b47de-bd76-4775-9001-e9d1327eafc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/files/deploy.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/outputs.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/hostvars_template.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/files/userdata.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/files/userdata.tmpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/vars.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/vars.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/inspec/bigip-ready/files/file" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/inspec/bigip-ready/files/file" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +35,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -78,6 +81,8 @@
       <workItem from="1574922245790" duration="1009000" />
       <workItem from="1574988736439" duration="13109000" />
       <workItem from="1575411461731" duration="191000" />
+      <workItem from="1575783013263" duration="280000" />
+      <workItem from="1575783319032" duration="36202000" />
     </task>
     <servers />
   </component>
@@ -98,9 +103,15 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="653" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1575411543681">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="1170" y="475" key="com.intellij.ide.util.TipDialog" timestamp="1575783319254">
+      <screen x="0" y="0" width="3440" height="1395" />
     </state>
     <state x="653" y="383" key="com.intellij.ide.util.TipDialog/-1920.23.1920.1057/0.23.1920.1057/-3600.23.1680.1027@0.23.1920.1057" timestamp="1575411543681" />
+    <state x="1170" y="475" key="com.intellij.ide.util.TipDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1575783319254" />
+    <state x="948" y="329" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575921756577">
+      <screen x="0" y="0" width="2560" height="1395" />
+    </state>
+    <state x="948" y="329" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1395@0.0.2560.1395" timestamp="1575921756577" />
+    <state x="1422" y="244" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.3840.1035@0.0.3840.1035" timestamp="1575865715940" />
   </component>
 </project>

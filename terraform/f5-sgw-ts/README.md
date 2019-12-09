@@ -6,18 +6,13 @@ This is a refactor of https://github.com/mjmenger/terraform-aws-bigip-setup to p
 an authentication token must be generated and recorded as documented below in order to access the modules required by this demo
 https://www.terraform.io/docs/commands/cli-config.html
 
-You can choose to run this from your workstation or a container. Follow the instructions below as appropriate;
+Initially this demo is run from the local workstation.
 
 # Using your workstation
 - install Terraform https://learn.hashicorp.com/terraform/getting-started/install.html
 - install inpsec https://www.inspec.io/downloads/
 - install locust https://docs.locust.io/en/stable/installation.html
 - install jq https://stedolan.github.io/jq/download/
-
-# Using a Docker container
-The port 8089 is opened in order to use the gui of the locust load generating tool should you choose to use it.
-- install Docker Desktop (https://www.docker.com/products/docker-desktop)
-- `docker run -it -v $(pwd):/workspace -p 8089:8089 mmenger/tfdemoenv:1.6.2 /bin/bash`
 
 # Required Resource
 This example creates the following resources inside of AWS.  Please ensure your IAM user or IAM Role has privileges to create these objects.
@@ -44,25 +39,34 @@ After subscribing, re-run the ```terraform apply``` and the error should not occ
 # Access Credentials
 ```bash
 #starting from within the clone of this repository
-vi secrets.auto.tfvars
+vi secrets.tfvars
 ```
-enter the following in the *secrets.auto.tfvars* file
-```hcl
-AccessKeyID         = "<AN ACCESS KEY FOR YOUR AWS ACCOUNT>" 
-SecretAccessKey     = "<THE SECRET KEY ASSOCIATED WITH THE AWS ACCESS KEY>" 
-ec2_key_name        = "<THE NAME OF AN AWS KEY PAIR WHICH IS ASSOCIATE WITH THE AWS ACOUNT>"
-ec2_key_file        = "<THE PATH TO AN SSH KEY FILE USED TO CONNECT TO THE UBUNTU SERVER ONCE IT IS CREATED. NOTE: THIS PATH SHOULD BE RELATIVE TO THE CONTAINER ROOT>"
+enter the following in the *secrets.tfvars* file
+```hcl-terraform
+cidr           = "<VPC CIDR Block>"
+region         = "<AWS Deployment Region>"
+azs            = ["<primary az>", "<secondary az>"]
+secops-profile = "<AWS_PROFILE>"
+customer       = "<Cusotomer Tage Prefix>"
+ec2_key_name   = "<EC2 Keypair>"
+ec2_key_file   = "<EC2 Private Key Absolution /path/to/filename.pem>"
+environment    = "<Environment - Tag>"
+project        = "<Project - Tag>"
 ```
 save the file and quit vi
 
 # Setup 
+
+Due to the modulistion of the demo structure this demo is created from ```secure``` path, after the repo has been cloned; 
 ```hcl
+# Enter secure demo path
+cd secure/
 # initialize Terraform
 terraform init
 # Plan terraform to validate deployment
-terraform plan
+terraform plan --var-file=/path/to/secrets.tfvars
 # build the BIG-IPS and the underpinning infrastructure
-terraform apply 
+terraform apply --var-file=/path/to/secrets.tfvars
 ```
 Depending upon how you intend to use the environment you may need to wait after Terraform is complete. The configuration of the  BIG-IPs is completed asynchoronously. If you need the BIG-IPs to be fully configured before proceeding, the following Inspec tests validate the connectivity of the BIG-IP and the availability of the management API end point.
 
@@ -75,7 +79,7 @@ inspec exec inspec/bigip-ready
 ```
 once the tests all pass the BIG-IPs are ready
 
-If terraform returns an error, rerun ```terraform apply```.
+If terraform returns an error, rerun ```terraform apply --var-file=/path/to/secrets.tfvars```.
 
 # Log into the BIG-IP
 ```
@@ -97,7 +101,7 @@ login as user:admin and password: <bigip_password>
 # Teardown
 When you are done using the demo environment you will need to decommission it
 ```hcl
-terraform destroy
+terraform destroy --var-file=/path/to/secret.tfvars
 ```
 
 as a final step check that terraform doesn't think there's anything remaining
@@ -105,7 +109,6 @@ as a final step check that terraform doesn't think there's anything remaining
 terraform show
 ```
 this should return a blank line
-<<<<<<< HEAD
 
 # Todo
 * adjust subnets and ranges to remove hardcoding for dynamic generation (smaller cidr for inspections)
@@ -113,5 +116,8 @@ this should return a blank line
 * AWS SSM integration for keystore/passwords
 * flow log addition/creation for CIS Foundations
 * AWS Security HUB(?)
-=======
->>>>>>> c1011a4108b87900d2187485c80916d354a7fe8e
+
+# Credits
+* Mark Menhjar - Terraform AWS BIG-IP Setup - <https://github.com/mjmenger/terraform-aws-bigip-setup>
+* Daniel Edgar - Ansible Uber Demo - <https://github.com/>
+

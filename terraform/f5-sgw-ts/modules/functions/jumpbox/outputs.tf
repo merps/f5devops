@@ -4,9 +4,11 @@ output "jumphost_ip" {
 }
 
 output "juiceshop_ips" {
-  value = aws_eip.juiceshop
+  description = "Juiceshop EIP IP Addresses"
+  value       = aws_eip.juiceshop
 }
 
 output "grafana_ips" {
-  value = aws_eip.grafana
+  description = "Grafana EIP IP Addresses"
+  value       = aws_eip.grafana
 }
