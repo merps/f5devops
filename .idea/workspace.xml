@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8b47de-bd76-4775-9001-e9d1327eafc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/files/deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/outputs.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/files/userdata.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/files/userdata.tmpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/outputs.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/inspec/bigip-ready/files/file" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/inspec/bigip-ready/files/file" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +74,7 @@
       <workItem from="1574988736439" duration="13109000" />
       <workItem from="1575411461731" duration="191000" />
       <workItem from="1575783013263" duration="280000" />
-      <workItem from="1575783319032" duration="36202000" />
+      <workItem from="1575783319032" duration="36750000" />
     </task>
     <servers />
   </component>

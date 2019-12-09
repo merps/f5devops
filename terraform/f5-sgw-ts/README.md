@@ -42,6 +42,7 @@ After subscribing, re-run the ```terraform apply``` and the error should not occ
 vi secrets.tfvars
 ```
 enter the following in the *secrets.tfvars* file
+<<<<<<< HEAD
 ```hcl-terraform
 cidr           = "<VPC CIDR Block>"
 region         = "<AWS Deployment Region>"
@@ -52,6 +53,13 @@ ec2_key_name   = "<EC2 Keypair>"
 ec2_key_file   = "<EC2 Private Key Absolution /path/to/filename.pem>"
 environment    = "<Environment - Tag>"
 project        = "<Project - Tag>"
+=======
+```hcl
+AccessKeyID         = "<AN ACCESS KEY FOR YOUR AWS ACCOUNT>" 
+SecretAccessKey     = "<THE SECRET KEY ASSOCIATED WITH THE AWS ACCESS KEY>" 
+ec2_key_name        = "<THE NAME OF AN AWS KEY PAIR WHICH IS ASSOCIATE WITH THE AWS ACOUNT>"
+ec2_key_file        = "<THE ABSOLUTE PATH TO AN SSH PRIVATE KEY FILE USED TO CONNECT TO THE UBUNTU SERVER ONCE IT IS CREATED>"
+>>>>>>> 0217e3616d4c69f34fc3290a7c7387bea906942e
 ```
 save the file and quit vi
 
@@ -64,9 +72,15 @@ cd secure/
 # initialize Terraform
 terraform init
 # Plan terraform to validate deployment
+<<<<<<< HEAD
 terraform plan --var-file=/path/to/secrets.tfvars
 # build the BIG-IPS and the underpinning infrastructure
 terraform apply --var-file=/path/to/secrets.tfvars
+=======
+terraform plan --var-file="<ABSOLUTE PATH OF THE *secrets.tfvars*>"
+# build the BIG-IPS and the underpinning infrastructure
+terraform apply --var-file="<ABSOLUTE PATH OF THE *secrets.tfvars*>"
+>>>>>>> 0217e3616d4c69f34fc3290a7c7387bea906942e
 ```
 Depending upon how you intend to use the environment you may need to wait after Terraform is complete. The configuration of the  BIG-IPs is completed asynchoronously. If you need the BIG-IPs to be fully configured before proceeding, the following Inspec tests validate the connectivity of the BIG-IP and the availability of the management API end point.
 
@@ -116,8 +130,11 @@ this should return a blank line
 * AWS SSM integration for keystore/passwords
 * flow log addition/creation for CIS Foundations
 * AWS Security HUB(?)
+<<<<<<< HEAD
 
 # Credits
 * Mark Menhjar - Terraform AWS BIG-IP Setup - <https://github.com/mjmenger/terraform-aws-bigip-setup>
 * Daniel Edgar - Ansible Uber Demo - <https://github.com/>
 
+=======
+>>>>>>> 0217e3616d4c69f34fc3290a7c7387bea906942e
