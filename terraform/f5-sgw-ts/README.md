@@ -42,7 +42,7 @@ After subscribing, re-run the ```terraform apply``` and the error should not occ
 vi secrets.tfvars
 ```
 enter the following in the *secrets.tfvars* file
-<<<<<<< HEAD
+
 ```hcl-terraform
 cidr           = "<VPC CIDR Block>"
 region         = "<AWS Deployment Region>"
@@ -53,13 +53,6 @@ ec2_key_name   = "<EC2 Keypair>"
 ec2_key_file   = "<EC2 Private Key Absolution /path/to/filename.pem>"
 environment    = "<Environment - Tag>"
 project        = "<Project - Tag>"
-=======
-```hcl
-AccessKeyID         = "<AN ACCESS KEY FOR YOUR AWS ACCOUNT>" 
-SecretAccessKey     = "<THE SECRET KEY ASSOCIATED WITH THE AWS ACCESS KEY>" 
-ec2_key_name        = "<THE NAME OF AN AWS KEY PAIR WHICH IS ASSOCIATE WITH THE AWS ACOUNT>"
-ec2_key_file        = "<THE ABSOLUTE PATH TO AN SSH PRIVATE KEY FILE USED TO CONNECT TO THE UBUNTU SERVER ONCE IT IS CREATED>"
->>>>>>> 0217e3616d4c69f34fc3290a7c7387bea906942e
 ```
 save the file and quit vi
 
