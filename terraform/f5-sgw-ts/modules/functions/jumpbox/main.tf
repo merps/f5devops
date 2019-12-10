@@ -133,24 +133,13 @@ resource "null_resource" "ansible" {
       host        = module.jumphost.public_ip[count.index]
     }
   }
-  /*
-  provisioner "file" {
-    source = "${path.module}/files/deploy.sh"
-    destination = "~/deploy.sh"
-
-    connection {
-      type = "ssh"
-      user = "ubuntu"
-      private_key = file(var.keyfile)
-      host = module.jumphost.public_ip[count.index]
-    }
-  }*/
 
   provisioner "remote-exec" {
     inline = [
+      "chmod 600 ~/${var.keyname}.pem",
       "git clone https://github.com/merps/ansible-uber-demo.git",
-      "cp /home/ubuntu/inventory.yml ansible-uber-demo/ansible/inventory.yml",
-      "cd ansible-uber-demo/",
+      "cp ~/inventory.yml ~/ansible-uber-demo/ansible/inventory.yml",
+      "cd ~/ansible-uber-demo/",
       "ansible-galaxy install -r ansible/requirements.yml",
       "ansible-playbook ansible/playbooks/site.yml"
     ]
