@@ -141,11 +141,12 @@ resource "null_resource" "ansible" {
       "cp ~/inventory.yml ~/ansible-uber-demo/ansible/inventory.yml",
       "cd ~/ansible-uber-demo/",
       "ansible-galaxy install -r ansible/requirements.yml",
-      "ansible-playbook ansible/playbooks/site.yml"
+      "sudo ansible-playbook ansible/playbooks/site.yml"
     ]
 
     connection {
       type        = "ssh"
+      timeout     = "10m"
       user        = "ubuntu"
       private_key = file(var.keyfile)
       host        = module.jumphost.public_ip[count.index]
@@ -159,7 +160,7 @@ data "aws_network_interface" "bar" {
 }
 
 resource "aws_eip" "juiceshop" {
-  depends_on                = [module.jumphost]
+  depends_on                = [null_resource.hostvars]
   count                     = length(var.azs)
   vpc                       = true
   network_interface         = data.aws_network_interface.bar[count.index].id
@@ -170,7 +171,7 @@ resource "aws_eip" "juiceshop" {
 }
 
 resource "aws_eip" "grafana" {
-  depends_on                = [module.jumphost]
+  depends_on                = [null_resource.hostvars]
   count                     = length(var.azs)
   vpc                       = true
   network_interface         = data.aws_network_interface.bar[count.index].id
