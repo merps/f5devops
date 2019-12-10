@@ -65,15 +65,9 @@ cd secure/
 # initialize Terraform
 terraform init
 # Plan terraform to validate deployment
-<<<<<<< HEAD
 terraform plan --var-file=/path/to/secrets.tfvars
 # build the BIG-IPS and the underpinning infrastructure
 terraform apply --var-file=/path/to/secrets.tfvars
-=======
-terraform plan --var-file="<ABSOLUTE PATH OF THE *secrets.tfvars*>"
-# build the BIG-IPS and the underpinning infrastructure
-terraform apply --var-file="<ABSOLUTE PATH OF THE *secrets.tfvars*>"
->>>>>>> 0217e3616d4c69f34fc3290a7c7387bea906942e
 ```
 Depending upon how you intend to use the environment you may need to wait after Terraform is complete. The configuration of the  BIG-IPs is completed asynchoronously. If you need the BIG-IPs to be fully configured before proceeding, the following Inspec tests validate the connectivity of the BIG-IP and the availability of the management API end point.
 
@@ -123,11 +117,7 @@ this should return a blank line
 * AWS SSM integration for keystore/passwords
 * flow log addition/creation for CIS Foundations
 * AWS Security HUB(?)
-<<<<<<< HEAD
 
 # Credits
 * Mark Menhjar - Terraform AWS BIG-IP Setup - <https://github.com/mjmenger/terraform-aws-bigip-setup>
 * Daniel Edgar - Ansible Uber Demo - <https://github.com/>
-
-=======
->>>>>>> 0217e3616d4c69f34fc3290a7c7387bea906942e
