@@ -82,17 +82,7 @@ resource "null_resource" "hostvars" {
   count = length(var.azs)
   provisioner "file" {
     content = templatefile(
-      "${path.module}/files/hostva
-
-    destination = "~/inventory.yml"
-
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = file(var.keyfile)
-      host        = module.jumphost.public_ip[count.index]
-    }
-  }rs_template.yml",
+      "${path.module}/files/hostvars_template.yml",
       {
         bigip_host_ip          = join(",", element(var.bigip_mgmt_addr, count.index)) #bigip_host_ip          = module.bigip.mgmt_public_ips[count.index]  the ip address that the bigip has on the management subnet
         bigip_host_dns         = var.bigip_mgmt_dns[count.index]                      # the DNS name of the bigip on the public subnet
@@ -112,6 +102,16 @@ resource "null_resource" "hostvars" {
         bigip_dns_server       = "8.8.8.8"
       }
     )
+
+    destination = "~/inventory.yml"
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file(var.keyfile)
+      host        = module.jumphost.public_ip[count.index]
+    }
+  }
 }
 
 #
