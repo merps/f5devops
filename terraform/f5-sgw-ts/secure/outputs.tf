@@ -20,10 +20,6 @@ output "mgmt_public_dns" {
   value = module.bigip.mgmt_public_dns
 }
 
-output "private_addresses" {
-  value = module.bigip.private_addresses
-}
-
 output "bigip_password" {
   description = "BIG-IP management password"
   value       = module.bigip.bigip_password
@@ -32,15 +28,16 @@ output "bigip_password" {
 # Jumpbox information
 output "jumphost_ip" {
   description = "ip address of jump host"
-  value       = module.jumpbox.jumphost_ip
+  value       = module.jumphost.jumphost_ip
 }
 
+#Ansible Module
 output "juiceshop_ip" {
-  value = module.jumpbox.juiceshop_ips[*].public_ip
+  value = module.ansible.juiceshop_ips[*].public_ip
 }
 
 output "grafana_ip" {
-  value = module.jumpbox.grafana_ips[*].public_ip
+  value = module.ansible.grafana_ips[*].public_ip
 }
 
 # Instance Information

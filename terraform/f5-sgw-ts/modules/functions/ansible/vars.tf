@@ -54,3 +54,7 @@ variable "bigip_password" {}
 variable "internal_subnet_offset" {
   default = 20
 }
+
+variable "jumphost_ip" {
+  description = "Public IP address of Jumpbox"
+}

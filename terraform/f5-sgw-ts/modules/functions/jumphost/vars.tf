@@ -47,10 +47,6 @@ variable "public_nic_ids" {}
 
 variable "docker_private_ip" {}
 
-variable "bigip_mgmt_addr" {}
-variable "bigip_mgmt_dns" {}
-variable "bigip_private_add" {}
-variable "bigip_password" {}
 variable "internal_subnet_offset" {
   default = 20
 }
