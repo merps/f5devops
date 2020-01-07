@@ -72,8 +72,8 @@ module "docker" {
 /*
 # Create Jump host as per requirements
 */
-module "jumpbox" {
-  source = "../modules/functions/jumpbox"
+module "jumphost" {
+  source = "../modules/functions/jumphost"
 
   providers = {
     aws = aws.secops
