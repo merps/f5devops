@@ -30,17 +30,22 @@ output "bigip_password" {
 }
 
 # Jumpbox information
-output "jumphost_ip" {
+output "jumphost_public_ip" {
   description = "ip address of jump host"
-  value       = module.jumphost.jumphost_ip
+  value       = module.jumphost.jumphost_public_ip
+}
+
+output "jumphost_private_ip" {
+  description = "ip address of jump host"
+  value       = module.jumphost.jumphost_private_ip
 }
 
 output "juiceshop_ip" {
-  value = module.jumphost.juiceshop_ips[*].public_ip
+  value = module.ansible.juiceshop_ips[*].public_ip
 }
 
 output "grafana_ip" {
-  value = module.jumphost.grafana_ips[*].public_ip
+  value = module.ansible.grafana_ips[*].public_ip
 }
 
 # Instance Information

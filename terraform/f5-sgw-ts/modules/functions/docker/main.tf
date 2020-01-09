@@ -13,7 +13,6 @@ data "aws_ami" "latest-ubuntu-docker" {
   }
 }
 
-
 module "dockerhost" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "~> 2.0"

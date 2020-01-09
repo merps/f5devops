@@ -49,3 +49,6 @@ variable "allowed_mgmt_cidr" {
 variable "allowed_app_cidr" {
   default = "0.0.0.0/0"
 }
+variable "depends_on" {
+  default = []
+}

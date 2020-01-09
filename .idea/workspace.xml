@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8b47de-bd76-4775-9001-e9d1327eafc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible/files/userdata.tmpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/files/userdata.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/files/userdata.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible/vars.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible/vars.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/vars.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/vars.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/vars.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/vars.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/files/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible/files/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/files/hostvars_template.yml" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible/files/hostvars_template.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/files/userdata.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/files/userdata.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/vars.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/vars.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/findthehosts.sh" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/findthehosts.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/vars.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/vars.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,8 +29,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Michael Kennedy &lt;merpso@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -31,8 +54,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TF_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -41,6 +65,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/ansible" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/files" />
     </key>
@@ -84,8 +111,16 @@
       <workItem from="1578547894099" duration="107000" />
       <workItem from="1578548032176" duration="4000" />
       <workItem from="1578548301592" duration="37000" />
-      <workItem from="1578548352590" duration="2412000" />
+      <workItem from="1578548352590" duration="12059000" />
     </task>
+    <task id="LOCAL-00001" summary="Testing of podman installation">
+      <created>1578555486730</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578555486730</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,7 +139,15 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Testing of podman installation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing of podman installation" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="2434" y="605" key="#CFNLint" timestamp="1578555915214">
+      <screen x="0" y="0" width="3440" height="1395" />
+    </state>
+    <state x="2434" y="605" key="#CFNLint/0.0.3440.1395@0.0.3440.1395" timestamp="1578555915214" />
     <state x="2178" y="358" key="#Updates" timestamp="1578547939766">
       <screen x="0" y="0" width="3440" height="1395" />
     </state>
@@ -113,6 +156,10 @@
       <screen x="0" y="0" width="3440" height="1395" />
     </state>
     <state x="2267" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1578547990594" />
+    <state x="2177" y="293" key="CommitChangelistDialog2" timestamp="1578555486549">
+      <screen x="0" y="0" width="3440" height="1395" />
+    </state>
+    <state x="2177" y="293" key="CommitChangelistDialog2/0.0.3440.1395@0.0.3440.1395" timestamp="1578555486549" />
     <state x="2336" y="543" key="cloudConfig.PluginsDialog" timestamp="1578548336106">
       <screen x="0" y="0" width="3440" height="1395" />
     </state>
@@ -127,10 +174,11 @@
     <state x="653" y="383" key="com.intellij.ide.util.TipDialog/-1920.23.1920.1057/0.23.1920.1057/-3600.23.1680.1027@0.23.1920.1057" timestamp="1575411543681" />
     <state x="871" y="475" key="com.intellij.ide.util.TipDialog/0.0.2560.1395@0.0.2560.1395" timestamp="1576060833222" />
     <state x="1170" y="475" key="com.intellij.ide.util.TipDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1578548354946" />
-    <state x="948" y="329" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575921756577">
-      <screen x="0" y="0" width="2560" height="1395" />
+    <state x="1274" y="329" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1578561594285">
+      <screen x="0" y="0" width="3440" height="1395" />
     </state>
     <state x="948" y="329" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1395@0.0.2560.1395" timestamp="1575921756577" />
+    <state x="1274" y="329" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.3440.1395@0.0.3440.1395" timestamp="1578561594285" />
     <state x="1422" y="244" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.3840.1035@0.0.3840.1035" timestamp="1575865715940" />
     <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1578319582064">
       <screen x="0" y="0" width="2560" height="1395" />

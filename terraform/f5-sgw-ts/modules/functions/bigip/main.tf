@@ -55,6 +55,7 @@ module "bigip" {
   vpc_public_subnet_ids  = var.public_subnets
   vpc_private_subnet_ids = var.private_subnets
   vpc_mgmt_subnet_ids    = var.database_subnets
+
 }
 #
 # Create a security group for BIG-IP
