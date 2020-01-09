@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8b47de-bd76-4775-9001-e9d1327eafc5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/files/deploy.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/files/hostvars_template.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/files/userdata.tmpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/main.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/outputs.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumpbox/vars.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/files/userdata.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/files/userdata.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/files/userdata.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/jumphost/files/userdata.tmpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +79,12 @@
       <workItem from="1575783013263" duration="280000" />
       <workItem from="1575783319032" duration="57889000" />
       <workItem from="1576060835642" duration="7933000" />
-      <workItem from="1578313156261" duration="5713000" />
+      <workItem from="1578313156261" duration="7458000" />
+      <workItem from="1578547749759" duration="48000" />
+      <workItem from="1578547894099" duration="107000" />
+      <workItem from="1578548032176" duration="4000" />
+      <workItem from="1578548301592" duration="37000" />
+      <workItem from="1578548352590" duration="2412000" />
     </task>
     <servers />
   </component>
@@ -108,12 +105,28 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="871" y="475" key="com.intellij.ide.util.TipDialog" timestamp="1576060833222">
-      <screen x="0" y="0" width="2560" height="1395" />
+    <state x="2178" y="358" key="#Updates" timestamp="1578547939766">
+      <screen x="0" y="0" width="3440" height="1395" />
+    </state>
+    <state x="2178" y="358" key="#Updates/0.0.3440.1395@0.0.3440.1395" timestamp="1578547939766" />
+    <state x="2267" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578547990594">
+      <screen x="0" y="0" width="3440" height="1395" />
+    </state>
+    <state x="2267" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1578547990594" />
+    <state x="2336" y="543" key="cloudConfig.PluginsDialog" timestamp="1578548336106">
+      <screen x="0" y="0" width="3440" height="1395" />
+    </state>
+    <state x="2336" y="543" key="cloudConfig.PluginsDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1578548336106" />
+    <state x="2338" y="543" key="cloudConfig.SelfSettingsDialog" timestamp="1578548329331">
+      <screen x="0" y="0" width="3440" height="1395" />
+    </state>
+    <state x="2338" y="543" key="cloudConfig.SelfSettingsDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1578548329331" />
+    <state x="1170" y="475" key="com.intellij.ide.util.TipDialog" timestamp="1578548354946">
+      <screen x="0" y="0" width="3440" height="1395" />
     </state>
     <state x="653" y="383" key="com.intellij.ide.util.TipDialog/-1920.23.1920.1057/0.23.1920.1057/-3600.23.1680.1027@0.23.1920.1057" timestamp="1575411543681" />
     <state x="871" y="475" key="com.intellij.ide.util.TipDialog/0.0.2560.1395@0.0.2560.1395" timestamp="1576060833222" />
-    <state x="1170" y="475" key="com.intellij.ide.util.TipDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1575783319254" />
+    <state x="1170" y="475" key="com.intellij.ide.util.TipDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1578548354946" />
     <state x="948" y="329" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575921756577">
       <screen x="0" y="0" width="2560" height="1395" />
     </state>
