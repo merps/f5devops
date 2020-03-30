@@ -20,9 +20,9 @@ resource "aws_secretsmanager_secret_version" "bigip-pwd" {
 # Create the BIG-IP appliances
 #
 module "bigip" {
-  # source  = "f5devcentral/bigip/aws"
-  # version = "0.1.2"
-  source = "github.com/f5devcentral/terraform-aws-bigip?ref=ip-outputs"
+  source  = "f5devcentral/bigip/aws"
+  version = "0.1.4"
+  # source = "github.com/f5devcentral/terraform-aws-bigip?ref=ip-outputs"
 
   prefix = format(
     "%s-bigip-3-nic_with_new_vpc-%s",
@@ -35,12 +35,13 @@ module "bigip" {
   ec2_key_name                = var.keyname
   ec2_instance_type           = "c4.xlarge"
   DO_URL                      = "https://github.com/F5Networks/f5-declarative-onboarding/releases/download/v1.9.0/f5-declarative-onboarding-1.9.0-1.noarch.rpm"
+  AS3_URL                     = "https://github.com/F5Networks/f5-appsvcs-extension/releases/download/v3.18.0/f5-appsvcs-3.18.0-4.noarch.rpm"
+  TS_URL                      = "https://github.com/F5Networks/f5-telemetry-streaming/releases/download/v1.10.0/f5-telemetry-1.10.0-2.noarch.rpm"
 
   mgmt_subnet_security_group_ids = [
     module.bigip_sg.this_security_group_id,
     module.bigip_mgmt_sg.this_security_group_id
   ]
-
 
   public_subnet_security_group_ids = [
     module.bigip_sg.this_security_group_id,
@@ -63,7 +64,7 @@ module "bigip_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
   name        = format("%s-bigip-%s", var.prefix, var.random.hex)
-  description = "Security group for BIG-IP Demo"
+  description = "Security group for BIG-IP Template"
   vpc_id      = var.vpcid
 
   ingress_cidr_blocks = [var.allowed_app_cidr]
@@ -104,3 +105,8 @@ module "bigip_mgmt_sg" {
   egress_cidr_blocks = ["0.0.0.0/0"]
   egress_rules       = ["all-all"]
 }
+
+resource "bigip_do"  "do-example" {
+     do_json = "${file("files/do-declaration.json")}"
+     tenant_name = "sample_test1"
+ }

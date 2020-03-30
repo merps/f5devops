@@ -51,7 +51,6 @@ module "bigip" {
 }
 /*
 # Create BIG-IQ host as per requirements
-*/
 module "bigiq" {
   source = "../modules/functions/bigiq"
 
@@ -70,9 +69,9 @@ module "bigiq" {
   keyname          = var.ec2_key_name
   keyfile          = var.ec2_key_file
 }
-/*
-# Create Docker host as per requirements
 */
+
+# Create Docker host as per requirements
 module "docker" {
   source = "../modules/functions/docker"
 
@@ -90,9 +89,8 @@ module "docker" {
   keyname         = var.ec2_key_name
   keyfile         = var.ec2_key_file
 }
-/*
+
 # Create Jump host as per requirements
-*/
 module "jumphost" {
   source = "../modules/functions/jumphost"
 

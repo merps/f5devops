@@ -1,5 +1,5 @@
 #
-# Create random password for BIG-IP
+# Create random password for BIG-IQ
 #
 resource "random_password" "password" {
   length           = 16
@@ -9,11 +9,11 @@ resource "random_password" "password" {
 #
 # Create Secret Store and Store BIG-IP Password
 #
-resource "aws_secretsmanager_secret" "bigip" {
-  name = format("%s-bigip-secret-%s", var.prefix, var.random.hex)
+resource "aws_secretsmanager_secret" "bigiq" {
+  name = format("%s-bigiq-secret-%s", var.prefix, var.random.hex)
 }
-resource "aws_secretsmanager_secret_version" "bigip-pwd" {
-  secret_id     = aws_secretsmanager_secret.bigip.id
+resource "aws_secretsmanager_secret_version" "bigiq-pwd" {
+  secret_id     = aws_secretsmanager_secret.bigiq.id
   secret_string = random_password.password.result
 }
 #
@@ -25,24 +25,18 @@ module "bigip" {
   source = "github.com/f5devcentral/terraform-aws-bigip?ref=ip-outputs"
 
   prefix = format(
-    "%s-bigip-3-nic_with_new_vpc-%s",
+    "%s-bigiq-2-nic_with_new_vpc-%s",
     var.prefix,
     var.random.hex
   )
-  aws_secretmanager_secret_id = aws_secretsmanager_secret.bigip.id
-  f5_ami_search_name          = "F5 BIGIP-14.1.2.* PAYG-Best 200Mbps*"
+  aws_secretmanager_secret_id = aws_secretsmanager_secret.bigiq.id
+  f5_ami_search_name          = "F5 Networks BYOL BIG-IQ-7.0.0.1.0.0.6*"
   f5_instance_count           = length(var.azs)
   ec2_key_name                = var.keyname
   ec2_instance_type           = "c4.xlarge"
-  DO_URL                      = "https://github.com/F5Networks/f5-declarative-onboarding/releases/download/v1.9.0/f5-declarative-onboarding-1.9.0-1.noarch.rpm"
+  # DO_URL                      = "https://github.com/F5Networks/f5-declarative-onboarding/releases/download/v1.9.0/f5-declarative-onboarding-1.9.0-1.noarch.rpm"
 
   mgmt_subnet_security_group_ids = [
-    module.bigip_sg.this_security_group_id,
-    module.bigip_mgmt_sg.this_security_group_id
-  ]
-
-
-  public_subnet_security_group_ids = [
     module.bigip_sg.this_security_group_id,
     module.bigip_mgmt_sg.this_security_group_id
   ]
@@ -52,7 +46,6 @@ module "bigip" {
     module.bigip_mgmt_sg.this_security_group_id
   ]
 
-  vpc_public_subnet_ids  = var.public_subnets
   vpc_private_subnet_ids = var.private_subnets
   vpc_mgmt_subnet_ids    = var.database_subnets
 }
@@ -63,7 +56,7 @@ module "bigip_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
   name        = format("%s-bigip-%s", var.prefix, var.random.hex)
-  description = "Security group for BIG-IP Demo"
+  description = "Security group for BIG-IQ Demo"
   vpc_id      = var.vpcid
 
   ingress_cidr_blocks = [var.allowed_app_cidr]
@@ -81,13 +74,13 @@ module "bigip_sg" {
   egress_rules       = ["all-all"]
 }
 #
-# Create a security group for BIG-IP Management
+# Create a security group for BIG-IQ Management
 #
 module "bigip_mgmt_sg" {
   source = "terraform-aws-modules/security-group/aws"
 
   name        = format("%s-bigip-mgmt-%s", var.prefix, var.random.hex)
-  description = "Security group for BIG-IP Demo"
+  description = "Security group for BIG-IQ Demo"
   vpc_id      = var.vpcid
 
   ingress_cidr_blocks = [var.allowed_mgmt_cidr]
