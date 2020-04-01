@@ -31,7 +31,7 @@ module "bigip" {
   )
   aws_secretmanager_secret_id = aws_secretsmanager_secret.bigip.id
   f5_ami_search_name          = "F5 BIGIP-14.1.2.* PAYG-Best 200Mbps*"
-  f5_instance_count           = length(var.azs)
+  f5_instance_count           = 1
   ec2_key_name                = var.keyname
   ec2_instance_type           = "c4.xlarge"
   DO_URL                      = "https://github.com/F5Networks/f5-declarative-onboarding/releases/download/v1.9.0/f5-declarative-onboarding-1.9.0-1.noarch.rpm"
@@ -106,7 +106,29 @@ module "bigip_mgmt_sg" {
   egress_rules       = ["all-all"]
 }
 
-resource "bigip_do"  "do-example" {
-     do_json = "${file("files/do-declaration.json")}"
-     tenant_name = "sample_test1"
+## https://support.f5.com/csp/article/K23449665
+locals {
+  mgmt_ip_this = module.bigip.mgmt_public_dns[0]
+  private_ip_this = flatten(module.bigip.private_addresses)
+}
+
+provider "bigip" {
+  address = local.mgmt_ip_this
+  username = "admin"
+  password = random_password.password.result
+}
+
+data "template_file" "init" {
+  template = "${file("${path.module}/files/do-declaration.tpl")}"
+  vars = {
+    bigip_hostname = module.bigip.mgmt_public_dns[0]
+    bigip_dns_server = "8.8.8.8"
+    bigip_external_self_ip = module.bigip.mgmt_public_ips[0]
+    bigip_internal_self_ip = local.private_ip_this[0]
+  }
+}
+
+resource "bigip_do" "bigip" {
+  do_json = data.template_file.init.rendered
+  tenant_name = "sample_test_${var.azs[0]}"
  }
