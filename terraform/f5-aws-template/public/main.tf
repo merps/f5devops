@@ -69,7 +69,7 @@ module "bigiq" {
   keyname          = var.ec2_key_name
   keyfile          = var.ec2_key_file
 }
-*/
+
 
 # Create Docker host as per requirements
 module "docker" {
@@ -115,3 +115,4 @@ module "jumphost" {
   bigip_password    = module.bigip.bigip_password
   bigip_private_add = module.bigip.private_addresses
 }
+*/

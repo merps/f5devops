@@ -40,13 +40,6 @@
                 "tcp:443"
             ],
             "trafficGroup": "traffic-group-local-only"
-        },
-        "internal-self": {
-            "class": "SelfIp",
-            "address": "${bigip_internal_self_ip}",
-            "vlan": "internal",
-            "allowService": "default",
-            "trafficGroup": "traffic-group-local-only"
         }
     }
 }

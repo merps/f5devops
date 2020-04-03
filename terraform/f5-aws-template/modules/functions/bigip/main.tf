@@ -106,29 +106,13 @@ module "bigip_mgmt_sg" {
   egress_rules       = ["all-all"]
 }
 
-## https://support.f5.com/csp/article/K23449665
-locals {
-  mgmt_ip_this = module.bigip.mgmt_public_dns[0]
-  private_ip_this = flatten(module.bigip.private_addresses)
-}
+module "bigip_do" {
+  source = "./DO/"
 
-provider "bigip" {
-  address = local.mgmt_ip_this
-  username = "admin"
-  password = random_password.password.result
+  bigip_mgmt_port = module.bigip.mgmt_port
+  bigip_password = aws_secretsmanager_secret_version.bigip-pwd.secret_string
+  mgmt_addresses = module.bigip.mgmt_addresses
+  mgmt_public_dns = module.bigip.mgmt_public_dns
+  mgmt_public_ips = module.bigip.mgmt_public_ips
+  private_addresses = module.bigip.private_addresses
 }
-
-data "template_file" "init" {
-  template = "${file("${path.module}/files/do-declaration.tpl")}"
-  vars = {
-    bigip_hostname = module.bigip.mgmt_public_dns[0]
-    bigip_dns_server = "8.8.8.8"
-    bigip_external_self_ip = module.bigip.mgmt_public_ips[0]
-    bigip_internal_self_ip = local.private_ip_this[0]
-  }
-}
-
-resource "bigip_do" "bigip" {
-  do_json = data.template_file.init.rendered
-  tenant_name = "sample_test_${var.azs[0]}"
- }
