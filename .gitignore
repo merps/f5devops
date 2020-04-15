@@ -14,6 +14,9 @@
 # Icon must end with two \r
 Icon
 
+# PythonCache
+*.pyc
+
 # Thumbnails
 ._*
 
