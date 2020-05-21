@@ -1,7 +1,7 @@
 # Demo deployment of BIG-IPs using Terraform
-Demo deployment of F5 BIG-IP in AWS using Terraform
+Demo deployment of F5 NGNIX environment consolidation in AWS using Terraform
 
-This is a refactor of https://github.com/mjmenger/terraform-aws-bigip-setup to present a more modular approach of deployement.  As per source, below, all aspects are applicable - the intention is to provide TS to SumoLogic for the deployment of a secure gateway solution within AWS.
+As per source, below, all aspects are applicable - the intention is to provide TS to SumoLogic for the deployment of a secure gateway solution within AWS.
 
 an authentication token must be generated and recorded as documented below in order to access the modules required by this demo
 https://www.terraform.io/docs/commands/cli-config.html
@@ -58,46 +58,20 @@ save the file and quit vi
 
 # Setup 
 
-Due to the modulistion of the demo structure this demo is created from ```secure``` path, after the repo has been cloned; 
+Due to the modulistion of the demo structure this demo is created from ```public``` path, after the repo has been cloned; 
 ```hcl
 # Enter secure demo path
-cd secure/
+cd public/
 # initialize Terraform
 terraform init
 # Plan terraform to validate deployment
 terraform plan --var-file=/path/to/secrets.tfvars
-# build the BIG-IPS and the underpinning infrastructure
+# build the NGINX and the underpinning infrastructure
 terraform apply --var-file=/path/to/secrets.tfvars
 ```
-Depending upon how you intend to use the environment you may need to wait after Terraform is complete. The configuration of the  BIG-IPs is completed asynchoronously. If you need the BIG-IPs to be fully configured before proceeding, the following Inspec tests validate the connectivity of the BIG-IP and the availability of the management API end point.
-
-```
-# check the status of the BIG-IPs
-# these steps can also be performed using ./runtests.sh
-#
-terraform output --json > inspec/bigip-ready/files/terraform.json
-inspec exec inspec/bigip-ready
-```
-once the tests all pass the BIG-IPs are ready
+Depending upon how you intend to use the environment you may need to wait after Terraform is complete. 
 
 If terraform returns an error, rerun ```terraform apply --var-file=/path/to/secrets.tfvars```.
-
-# Log into the BIG-IP
-```
-#
-# find the connection info for the BIG-IP
-# these steps can also be performed by using ./findthehosts.sh
-#
-export BIGIPHOST0=`terraform output --json | jq -r '.bigip_mgmt_public_ips.value[0]'`
-export BIGIPMGMTPORT=`terraform output --json | jq -r '.bigip_mgmt_port.value'`
-export BIGIPPASSWORD=`terraform output --json | jq -r '.bigip_password.value'`
-export JUMPHOSTIP=`terraform output --json | jq -r '.jumphost_ip.value[0]'`
-echo connect at https://$BIGIPHOST0:$BIGIPMGMTPORT with $BIGIPPASSWORD
-echo connect to jumphost at with
-echo ssh -i "<THE AWS KEY YOU IDENTIFIED ABOVE>" ubuntu@$JUMPHOSTIP
-```
-connect to the BIGIP at https://<bigip_mgmt_public_ips>:<bigip_mgmt_port>
-login as user:admin and password: <bigip_password>
 
 # Teardown
 When you are done using the demo environment you will need to decommission it
@@ -119,5 +93,4 @@ this should return a blank line
 * AWS Security HUB(?)
 
 # Credits
-* Mark Menhjar - Terraform AWS BIG-IP Setup - <https://github.com/mjmenger/terraform-aws-bigip-setup>
-* Daniel Edgar - Ansible Uber Demo - <https://github.com/>
+
