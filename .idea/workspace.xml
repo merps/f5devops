@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8b47de-bd76-4775-9001-e9d1327eafc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigiq/main.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigiq/outputs.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigiq/vars.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/f5-eap-ngix/modules/functions/nginx-rdr/outputs.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/f5cs/bare_cs.py" beforeDir="false" afterPath="$PROJECT_DIR$/f5cs/bare_cs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/secure/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,24 +16,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="$PROJECT_DIR$/.idea" />
-      </set>
-    </option>
-  </component>
   <component name="ProjectId" id="1Tp4fzlepTFx9pfppikgRV1P6xM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/terraform/f5-eap-ngix/modules/functions/nginx-rdr" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,24 +34,13 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/files" />
     </key>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/terraform/f5-eap-ngix/modules/functions/nginx-rdr" />
+      <recent name="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -106,65 +84,41 @@
       <workItem from="1585025687540" duration="29000" />
       <workItem from="1585025741761" duration="1281000" />
       <workItem from="1585035874046" duration="13000" />
+      <workItem from="1590032619659" duration="5000" />
+      <workItem from="1590032697379" duration="3954000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1578" y="605" key="#CFNLint" timestamp="1580452212163">
-      <screen x="0" y="0" width="3440" height="1395" />
-    </state>
-    <state x="1578" y="605" key="#CFNLint/0.0.3440.1395@0.0.3440.1395" timestamp="1580452212163" />
     <state x="1299" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1585025710638">
       <screen x="0" y="0" width="3440" height="1395" />
     </state>
     <state x="725" y="321" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1583201049021" />
-    <state x="967" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1395@0.0.2560.1395" timestamp="1579831281748" />
     <state x="1299" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1585025710638" />
-    <state x="647" y="454" key="FileChooserDialogImpl" timestamp="1578886246874">
-      <screen x="0" y="0" width="3440" height="1395" />
-    </state>
-    <state x="647" y="454" key="FileChooserDialogImpl/0.0.3440.1395@0.0.3440.1395" timestamp="1578886246874" />
-    <state width="1697" height="391" key="GridCell.Tab.0.bottom" timestamp="1580455107085">
-      <screen x="0" y="0" width="3440" height="1395" />
-    </state>
-    <state width="1697" height="391" key="GridCell.Tab.0.bottom/0.0.3440.1395@0.0.3440.1395" timestamp="1580455107085" />
-    <state width="1697" height="391" key="GridCell.Tab.0.center" timestamp="1580455107084">
-      <screen x="0" y="0" width="3440" height="1395" />
-    </state>
-    <state width="1697" height="391" key="GridCell.Tab.0.center/0.0.3440.1395@0.0.3440.1395" timestamp="1580455107084" />
-    <state width="1697" height="391" key="GridCell.Tab.0.left" timestamp="1580455107083">
-      <screen x="0" y="0" width="3440" height="1395" />
-    </state>
-    <state width="1697" height="391" key="GridCell.Tab.0.left/0.0.3440.1395@0.0.3440.1395" timestamp="1580455107083" />
-    <state width="1697" height="391" key="GridCell.Tab.0.right" timestamp="1580455107085">
-      <screen x="0" y="0" width="3440" height="1395" />
-    </state>
-    <state width="1697" height="391" key="GridCell.Tab.0.right/0.0.3440.1395@0.0.3440.1395" timestamp="1580455107085" />
     <state x="1170" y="475" key="com.intellij.ide.util.TipDialog" timestamp="1585035878561">
       <screen x="0" y="0" width="3440" height="1395" />
     </state>
     <state x="653" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1583202692296" />
     <state x="871" y="475" key="com.intellij.ide.util.TipDialog/0.0.2560.1395@0.0.2560.1395" timestamp="1583101185296" />
     <state x="1170" y="475" key="com.intellij.ide.util.TipDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1585035878561" />
-    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1579831698617">
-      <screen x="0" y="0" width="2560" height="1395" />
+    <state x="2194" y="341" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590036999238">
+      <screen x="0" y="0" width="3440" height="1404" />
     </state>
-    <state x="943" y="317" width="672" height="678" key="search.everywhere.popup/0.0.2560.1395@0.0.2560.1395" timestamp="1579831698617" />
+    <state x="2194" y="341" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.3440.1404@0.0.3440.1404" timestamp="1590036999238" />
   </component>
 </project>

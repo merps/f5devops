@@ -30,7 +30,7 @@ module "bigip" {
     var.random.hex
   )
   aws_secretmanager_secret_id = aws_secretsmanager_secret.bigip.id
-  f5_ami_search_name          = "F5 BIGIP-14.1.2.* PAYG-Best 200Mbps*"
+  f5_ami_search_name          = "F5 BIGIP-14.1.2* PAYG-Best 200Mbps*"
   f5_instance_count           = length(var.azs)
   ec2_key_name                = var.keyname
   ec2_instance_type           = "c4.xlarge"
