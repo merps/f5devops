@@ -1,10 +1,8 @@
-# Demo deployment of BIG-IPs using Terraform
+# Demo deployment of NGINX using Terraform
 Demo deployment of F5 NGNIX environment consolidation in AWS using Terraform
 
-As per source, below, all aspects are applicable - the intention is to provide TS to SumoLogic for the deployment of a secure gateway solution within AWS.
-
-an authentication token must be generated and recorded as documented below in order to access the modules required by this demo
-https://www.terraform.io/docs/commands/cli-config.html
+As per source, below, all aspects are applicable - the intention is to provide a host header consolidation to assist with 
+the considation of fqdns to like application to policy support.
 
 Initially this demo is run from the local workstation.
 
@@ -60,7 +58,7 @@ save the file and quit vi
 
 Due to the modulistion of the demo structure this demo is created from ```public``` path, after the repo has been cloned; 
 ```hcl
-# Enter secure demo path
+# Enter public demo path
 cd public/
 # initialize Terraform
 terraform init
