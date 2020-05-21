@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8b47de-bd76-4775-9001-e9d1327eafc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/terraform/f5-eap-ngix/modules/functions/nginx-rdr/outputs.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f5cs/bare_cs.py" beforeDir="false" afterPath="$PROJECT_DIR$/f5cs/bare_cs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/bigip/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +31,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/files" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/terraform/f5-eap-ngix/modules/functions/nginx-rdr" />
       <recent name="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions/docker/files" />
     </key>
   </component>
   <component name="SvnConfiguration">
