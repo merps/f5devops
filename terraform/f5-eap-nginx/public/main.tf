@@ -62,7 +62,6 @@ module "jumphost" {
   env               = var.environment
   vpcid             = module.vpc.vpc_id
   public_subnets    = module.vpc.public_subnets
-  public_nic_ids    = module.bigip.public_nic_ids
   docker_private_ip = module.docker.docker_private_ip
   random            = random_id.id
   keyname           = var.ec2_key_name

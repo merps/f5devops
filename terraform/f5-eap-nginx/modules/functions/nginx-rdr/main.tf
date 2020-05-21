@@ -15,9 +15,12 @@ data "aws_ami" "latest-ubuntu" {
 
 resource null_resource "ansible_rdr" {
   depends_on = [
-    "module.nginx-rdr"
+    module.nginx-rdr
   ]
 
+  ## TODO - fix this bloody error:
+  # module.nginx-rdr.null_resource.ansible_rdr: Creating...
+  # Error: Invalid template interpolation value: Cannot include the given value in a string template: string required.
   provisioner "local-exec" {
     command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ec2-user --private-key '${var.keyfile}' -i '${module.nginx-rdr.public_ip},' ansible/main.yml"
   }

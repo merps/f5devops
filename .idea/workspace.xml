@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8b47de-bd76-4775-9001-e9d1327eafc5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/terraform/f5-eap-nginx/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-eap-nginx/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/nginx-rdr/files/userdata.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/jumphost/vars.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/jumphost/vars.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/nginx-rdr/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/nginx-rdr/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/nginx-rdr/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/nginx-rdr/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/nginx-rdr/vars.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/nginx-rdr/vars.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/f5-eap-nginx/public/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/f5-eap-nginx/public/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/terraform/f5-eap-ngix/modules/functions/nginx-rdr" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/nginx-rdr" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -32,6 +38,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/terraform/f5-eap-nginx/modules/functions/nginx-rdr" />
       <recent name="$PROJECT_DIR$/terraform/f5-eap-ngix/modules/functions/nginx-rdr" />
       <recent name="$PROJECT_DIR$/terraform/f5-sgw-ts/modules/functions" />
     </key>
@@ -113,9 +120,9 @@
     <state x="653" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1035/1920.0.1920.1080@0.0.1920.1035" timestamp="1583202692296" />
     <state x="871" y="475" key="com.intellij.ide.util.TipDialog/0.0.2560.1395@0.0.2560.1395" timestamp="1583101185296" />
     <state x="1170" y="475" key="com.intellij.ide.util.TipDialog/0.0.3440.1395@0.0.3440.1395" timestamp="1585035878561" />
-    <state x="2194" y="341" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590036999238">
+    <state x="2194" y="341" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590047230442">
       <screen x="0" y="0" width="3440" height="1404" />
     </state>
-    <state x="2194" y="341" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.3440.1404@0.0.3440.1404" timestamp="1590036999238" />
+    <state x="2194" y="341" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.3440.1404@0.0.3440.1404" timestamp="1590047230442" />
   </component>
 </project>

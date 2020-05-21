@@ -44,9 +44,6 @@ variable "allowed_mgmt_cidr" {
 variable "allowed_app_cidr" {
   default = "0.0.0.0/0"
 }
-variable "public_nic_ids" {}
-
-variable "docker_private_ip" {}
 
 variable "internal_subnet_offset" {
   default = 20
