@@ -1,0 +1,30 @@
+- name: Install EPEL Release
+  yum:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    state: present
+
+- name: Install Certbot Nginx
+  yum:
+    update_cache: yes
+    name: "{{ item }}"
+  become: true
+  with_items:
+      - certbot-nginx
+
+- name: Create letsencrypt certificate
+  shell: certbot certonly --webroot -n -w "/usr/share/nginx/html" -m '{{ sslemail }}' --agree-tos -d "{{ domain }}"
+  when: env == "live"
+
+- name: Create letsencrypt certificate
+  shell: certbot certonly --webroot -n -w "/usr/share/nginx/html" -m '{{ sslemail }}' --staging --agree-tos -d "{{ domain }}"
+  when: env == "staging"
+
+- name: Add letsencrypt cronjob for cert renewal
+  cron:
+    name: letsencrypt_renewal
+    special_time: weekly
+    job: certbot --renew certonly  -n --webroot -w "/var/www/{{ domain }}" -m '{{ sslemail }}' --agree-tos -d "{{ domain }}" && service nginx reload
+
+- openssl_dhparam:
+    path: /etc/letsencrypt/live/{{ domain }}/dh2048.pem
+    size: 2048
