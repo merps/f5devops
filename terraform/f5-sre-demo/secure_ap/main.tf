@@ -3,6 +3,13 @@
 #
 terraform {
   required_version = ">= 0.12"
+  backend "remote" {
+    organization = "f5-labs"
+
+    workspaces {
+      name = "f5devops"
+    }
+  }
 }
 /*
 # Create a random id
