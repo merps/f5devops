@@ -57,27 +57,6 @@ module "bigip" {
   keyfile          = var.ec2_key_file
 }
 /*
-# Create BIG-IQ host as per requirements
-*/
-module "bigiq" {
-  source = "../modules/functions/bigiq"
-
-  providers = {
-    aws = aws.secops
-  }
-
-  prefix           = "${var.project}-${var.environment}"
-  cidr             = var.cidr
-  azs              = var.azs
-  env              = var.environment
-  vpcid            = module.vpc.vpc_id
-  private_subnets  = module.vpc.private_subnets
-  database_subnets = module.vpc.database_subnets
-  random           = random_id.id
-  keyname          = var.ec2_key_name
-  keyfile          = var.ec2_key_file
-}
-/*
 # Create Docker host as per requirements
 */
 module "docker" {
