@@ -77,6 +77,7 @@ module "jumphost_sg" {
   egress_cidr_blocks = ["0.0.0.0/0"]
   egress_rules       = ["all-all"]
 }
+/*
 #
 # Create and place the inventory.yml file for the ansible demo
 #
@@ -153,7 +154,7 @@ resource "null_resource" "ansible" {
     }
   }
 }
-
+*/
 data "aws_network_interface" "bar" {
   count = length(var.public_nic_ids)
   id    = var.public_nic_ids[count.index]
