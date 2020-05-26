@@ -159,7 +159,7 @@ data "aws_network_interface" "bar" {
   count = length(var.public_nic_ids)
   id    = var.public_nic_ids[count.index]
 }
-
+/*
 resource "aws_eip" "juiceshop" {
   depends_on                = [null_resource.hostvars]
   count                     = length(var.azs)
@@ -181,3 +181,4 @@ resource "aws_eip" "grafana" {
     Name = format("%s-grafana-eip-%s%s", var.prefix, var.random.hex, count.index)
   }
 }
+*/
