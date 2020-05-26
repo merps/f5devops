@@ -3,26 +3,6 @@ output "vpc" {
   description = "AWS VPC ID for the created VPC"
   value       = module.vpc.vpc_id
 }
-# BIG-IQ Information
-output "bigiq_mgmt_public_ips" {
-  value = module.bigiq.mgmt_public_ips
-}
-output "bigiq_mgmt_port" {
-  value = module.bigiq.bigiq_mgmt_port
-}
-
-output "bigiq_mgmt_public_dns" {
-  value = module.bigiq.mgmt_public_dns
-}
-
-output "bigiq_private_addresses" {
-  value = module.bigiq.private_addresses
-}
-
-output "bigiq_password" {
-  description = "BIG-IQ management password"
-  value       = module.bigiq.bigiq_password
-}
 # BIG-IP Information
 output "public_nic_ids" {
   value = module.bigip.public_nic_ids
