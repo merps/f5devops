@@ -58,7 +58,7 @@ module "bigip" {
 }
 /*
 # Create Docker host as per requirements
-*/
+
 module "docker" {
   source = "../modules/functions/docker"
 
@@ -76,7 +76,7 @@ module "docker" {
   keyname         = var.ec2_key_name
   keyfile         = var.ec2_key_file
 }
-/*
+
 # Create Jump host as per requirements
 */
 module "jumphost" {
